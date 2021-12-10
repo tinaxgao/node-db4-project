@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "server": "nodemon index.js",
     "ketchup": "git fetch && git reset --hard origin/lecture",
     "latest": "knex migrate:latest",
-    "rollback": "knex migrate:rollback",
+    "rollback": "knex migrate:rollback",  
     "seed": "knex seed:run",
-    "start": "node index.js"
+    "cleanup": "knex seed:run --specific=01-cleanup.js"
   },
   "repository": {
     "type": "git",

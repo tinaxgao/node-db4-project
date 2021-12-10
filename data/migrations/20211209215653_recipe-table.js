@@ -13,7 +13,7 @@ exports.up = async function (knex) {
     .createTable("steps", (table) => {
       table.increments("step_id");
       table.integer("step_number").unsigned().notNullable();
-      table.string("step_instructions", 128).notNullable();
+      table.string("step_instructions", 400).notNullable();
       table
         .integer("recipe_id")
         .unsigned()
@@ -38,7 +38,7 @@ exports.up = async function (knex) {
         .references("ingredient_id")
         .inTable("ingredients")
         .onDelete("CASCADE");
-      table.integer("quantity", 128);
+      table.float("quantity", 128);
     });
 };
 
