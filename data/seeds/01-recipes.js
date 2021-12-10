@@ -1,7 +1,9 @@
-exports.seed = function (knex, Promise) {
-  return knex("recipes").insert([
-    { recipe_name: "Mashed Potatoes" },
-    { recipe_name: "Mulled Wine" },
-    { recipe_name: "Mac & Cheese" },
-  ]);
+const recipes = [
+  { recipe_name: "Mashed Potatoes" },
+  { recipe_name: "Mulled Wine" },
+  { recipe_name: "Mac & Cheese" },
+]
+
+exports.seed = async function (knex) {
+  await knex("recipes").insert(recipes);
 };
